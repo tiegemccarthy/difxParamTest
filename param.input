@@ -1,0 +1,7 @@
+# Example parameter input file
+--GLOBAL--
+dataBufferFactor=16,32,40,48
+minReadSize=16000000, 32000000,64000000,128000000
+--SOURCE--
+--SETUP--
+strideLength=16,32,64

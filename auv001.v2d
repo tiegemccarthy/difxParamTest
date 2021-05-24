@@ -1,0 +1,174 @@
+minLength = 0.01
+invalidMask = 0
+singleScan=True
+threadsFile = threads
+tweakIntTime=True
+#mode=profile
+minSubarray=1
+sortAntennas=True
+minReadSize=128000000
+machines=vc0,vc0,vc0,vc0,vc0,vc0,vc0,vc0,vc0,vc0,vc0,vc0,vc0,vc0,vc0,vc0,vc0,vc0,vc1,vc1,vc1,vc1,vc1,vc1,vc1,vc1,vc1,vc1,vc1,vc1,vc1,vc1,vc1,vc1,vc1,vc1,vc1,vc2,vc2,vc2,vc2,vc2,vc2,vc2,vc2,vc2,vc2,vc2,vc2,vc2,vc2,vc2,vc2,vc2,vc2,vc2,vc3,vc3,vc3,vc3,vc3,vc3,vc3,vc3,vc3,vc3,vc3,vc3,vc3,vc3,vc3,vc3,vc3,vc3,vc3,vc4,vc4,vc4,vc4,vc4,vc4,vc4,vc4,vc4,vc4,vc4,vc4,vc4,vc4,vc4,vc4,vc4,vc4,vc4,vc5,vc5,vc5,vc5,vc5,vc5,vc5,vc5,vc5,vc5,vc5,vc5,vc5,vc5,vc5,vc5,vc5,vc5,vc5,vc6,vc6,vc6,vc6,vc6,vc6,vc6,vc6,vc6,vc6,vc6,vc6,vc6,vc6,vc6,vc6,vc6,vc6,vc6,vc7,vc7,vc7,vc7,vc7,vc7,vc7,vc7,vc7,vc7,vc7,vc7,vc7,vc7,vc7,vc7,vc7,vc7,vc7,vc8,vc8,vc8,vc8,vc8,vc8,vc8,vc8,vc8,vc8,vc8,vc8,vc8,vc8,vc8,vc8,vc8,vc8,vc8
+
+SETUP default
+{
+#  specRes=0.001
+specRes=0.25
+#specRes=0.015625
+tInt=1.0
+guardNS = 26000
+strideLength=0
+#freqId=30-43
+   #freqId=48-63
+   #freqId=0-23
+#freqId=8-15
+#freqId=16-23
+#freqId=0
+#freqId=1
+#freqId=2
+#freqId=3
+#freqId=4
+#freqId=5
+#freqId=6
+#freqId=7
+#freqId=8
+#freqId=9
+#freqId=10
+#freqId=11
+#freqId=12
+#freqId=13
+#freqId=14
+#freqId=15
+#freqId=16
+#freqId=17
+#freqId=18
+#freqId=19
+#freqId=20
+#freqId=21
+#freqId=22
+#freqId=23
+    }
+
+RULE default
+{
+  setup = default
+  }
+
+
+vex=auv001.vex 
+
+antennas = Hb,Ke
+
+
+
+ANTENNA Ke {
+clockOffset=-1.875e+01
+clockRate=-9.923e-07
+clockEpoch=2020y314d02h00m00s
+
+datastreams = KeA, KeB, KeC, KeD, KeE, KeF
+phaseCalInt = 10
+toneGuard = 3
+toneSelection = most
+polSwap=True}
+
+ANTENNA Hb {
+clockOffset=-2.350e+01
+clockRate=-9.859e-08
+clockEpoch=2020y314d02h00m00s
+deltaClock=0.1
+datastreams = HbA , HbB, HbC, HbD, HbE, HbF
+  phaseCalInt = 10
+  toneGuard = 3
+  toneSelection = most 
+  }
+  
+
+DATASTREAM HbA {
+format = VDIF/8032/2
+nBand=8
+filelist=hbA.filelist
+machine=vc2 
+}
+
+DATASTREAM HbB {
+format = VDIF/8032/2
+nBand=8
+filelist=hbB.filelist
+machine=vc2
+}
+
+DATASTREAM HbC {
+format = VDIF/8032/2
+nBand=8
+filelist=hbC.filelist
+machine=vc2
+}
+
+DATASTREAM HbD {
+format = VDIF/8032/2
+nBand=8
+filelist=hbD.filelist
+machine=vc2
+}
+
+DATASTREAM HbE {
+format = VDIF/8032/2
+nBand=8
+filelist=hbE.filelist
+machine=vc2
+}
+
+DATASTREAM HbF {
+format = VDIF/8032/2
+nBand=8
+filelist=hbF.filelist
+machine=vc2
+}
+
+DATASTREAM KeA {
+format = VDIF/8032/2
+nBand=8
+filelist=keA.filelist
+machine=vc3
+}
+
+DATASTREAM KeB {
+format = VDIF/8032/2
+nBand=8
+filelist=keB.filelist
+machine=vc3
+}
+
+DATASTREAM KeC {
+format = VDIF/8032/2
+nBand=8
+filelist=keC.filelist
+machine=vc3
+}
+
+DATASTREAM KeD {
+format = VDIF/8032/2
+nBand=8
+filelist=keD.filelist
+machine=vc3
+}
+
+DATASTREAM  KeE {
+format = VDIF/8032/2
+nBand=8
+filelist=keE.filelist
+machine=vc3
+}
+
+DATASTREAM KeF {
+format = VDIF/8032/2
+nBand=8
+filelist=keF.filelist
+machine=vc3
+}
+
+EOP 59161 { xPole=.149230 yPole=.292430 tai_utc=37 ut1_utc=-.174531 }
+EOP 59162 { xPole=.147690 yPole=.292050 tai_utc=37 ut1_utc=-.174590 }
+EOP 59163 { xPole=.146010 yPole=.291650 tai_utc=37 ut1_utc=-.174932 }
+EOP 59164 { xPole=.144030 yPole=.291220 tai_utc=37 ut1_utc=-.175507 }
+EOP 59165 { xPole=.142010 yPole=.290700 tai_utc=37 ut1_utc=-.176280 }
